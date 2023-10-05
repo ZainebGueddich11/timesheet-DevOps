@@ -1,6 +1,11 @@
 package tn.esprit.spring.entities;
 
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -14,8 +19,12 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+
 @Entity
 @Table(name = "T_USER")
+@Getter
+@Setter
+@NoArgsConstructor
 public class User implements Serializable {
 
 
@@ -35,7 +44,7 @@ public class User implements Serializable {
 	@Enumerated(EnumType.STRING)
 	Role role; 
 	
-	public User() {	}
+
 
 	public User(String firstName, String lastName, Date dateNaissance, Role role) {
 		super();
@@ -63,31 +72,6 @@ public class User implements Serializable {
 	}
 
 
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-	public void setLastName(String lName) {
-		this.lastName = lName;
-	}
-	public Date getDateNaissance() {
-		return dateNaissance;
-	}
-	public void setDateNaissance(Date dateNaissance) {
-		this.dateNaissance = dateNaissance;
-	}
-	public Role getRole() {
-		return role;
-	}
-	public void setRole(Role role) {
-		this.role = role;
-	}
 	
 
 }
